@@ -7,12 +7,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>reviews</ion-title>
+    <ion-title style='background-color: #FF99C8'>Agregar Libro</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding style='background-color: #FF99C8'>
+<ion-list>
+<ion-card *ngFor = "let r of reviews">
+  <ion-item>
+    <ion-avatar item-start>
+      <img [src] = r.avatar>
+    </ion-avatar>
+      <h2>{{r.persona}}</h2>
+      <ion-note>{{r.fecha}}</ion-note>
+    </ion-item>
+      <ion-card-content>
+        {{r.texto}}
+    </ion-card-content>
+</ion-card>
+</ion-list>
+
+<button ion-button block (click)="agregarReview()">Escribe una reseña</button>
 
 </ion-content>

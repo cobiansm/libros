@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NewRevPage } from '../new-rev/new-rev';
 
 /**
  * Generated class for the ReviewsPage page.
@@ -14,6 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'reviews.html',
 })
 export class ReviewsPage {
+res = NewRevPage;
+
+reviews = [
+  {persona: 'Marlene Cobian', texto: 'Muy buen libro.', fecha: '25/11/2018', avatar: '../assets/marlene.png'},
+];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -21,5 +27,10 @@ export class ReviewsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReviewsPage');
   }
+
+  agregarReview() {
+    this.navCtrl.push(this.res, {reviews: this.reviews});
+  }
+
 
 }

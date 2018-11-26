@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>newRev</ion-title>
+    <ion-title style='background-color: #FCF6BD'>Agregar Reseña</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content padding style='background-color: #FCF6BD'>
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-input [(ngModel)] = 'persona' placeholder = 'Nombre'></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)] = 'texto' placeholder = 'Reseña'></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <button ion-button block (click)='publicarRes()'>Agregar</button>
 </ion-content>
