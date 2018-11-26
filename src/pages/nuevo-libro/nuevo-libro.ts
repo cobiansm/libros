@@ -30,7 +30,7 @@ books = [];
 
   agregarLibro() {
     if (this.titulo.length > 0) {
-      this.books.push({titulo: this.titulo, autor: this.autor, year: this.year, editoial: this.editorial, imagen: '../assets/books.png'});
+      this.books.push({titulo: this.titulo, autor: this.autor, year: this.year, editoial: this.editorial, imagen: this.imagen});
       this.navCtrl.pop();
     } else {
       const alert = this.alertCtrl.create ({
