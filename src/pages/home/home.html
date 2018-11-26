@@ -1,14 +1,34 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button (click)='nuevoLibro()' ion-button icon-only color="royal">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title style='background-color: #E4C1F9'>bookstore.com</ion-title>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding style='background-color: #E4C1F9'>
+  <ion-list>
+    <ion-item-sliding *ngFor="let b of books">
+      <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]=b.imagen>
+      </ion-thumbnail>
+      <h2 (click)="clickLibro(b)">{{b.titulo}}</h2>
+      <p (click)="clickAutor(b)">{{b.autor}}</p>  
+      <p>{{b.editorial}}</p>      
+      <p>{{b.year}}</p>
+      <ion-list (click)="clickRev(b)">
+        <ion-icon name="star"></ion-icon>
+      </ion-list>
+    </ion-item>
+    <ion-item-options side ="right">
+      <button ion-button (click)="clickEliminar(b)" color="danger">
+        <ion-icon name="close">Eliminar</ion-icon>
+      </button>
+    </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
